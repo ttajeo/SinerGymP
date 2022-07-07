@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Css Styles -->
+    <link rel="stylesheet" scr="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" scr="/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" scr="/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" scr="/css/style.css" type="text/css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style type="text/css">
+        #edad {
+            width: 3em;
+        }
+
+        .card {
+            width: 640px;
+            height: auto;
+           
+        }
+
+        .card-body {
+            width: 640px;
+            height: auto;
+            
+
+        }
+        .div_centrado{
+        width: 640px;       
+        height: auto;
+        position: absolute;
+        top:15%;
+        left: 35%;           
+        margin-top: -70px;
+        margin-left: -100px;
+    }
+    </style>
+    <title>Prototipo Registro</title>
+</head>
+
+<body>
+    <div class="div_centrado">
+            <h1 class="text-center">Registro de nuevo cliente</h1>
+            <br>
+        <form>
+            <div class="row">
+                <!--Rut-->
+                <div class="form-group col-lg-6">
+                    <label for="run">Ingrese su rut</label>
+                    <input type="text" class="form-control" id="run" required placeholder="20323999-k">
+                </div>
+                <!---->
+                <!--Nombre-->
+                <div class=" form-group col-lg-6">
+                    <label for="nameN">Nombre</label>
+                    <input type="text" class="form-control" id="nameN" required placeholder="Kevin">
+                </div>
+                <!---->
+            </div>
+            <div class="row">
+                <!--Apellido Paterno-->
+            <div class="form-group col-lg-6">
+                <label for="apellidoP">Apellido Paterno</label>
+                <input type="text" class="form-control" id="apellidoP" required placeholder="Beltrán">
+            </div>
+            <!---->
+            <!--Apellido Materno-->
+            <div class="form-group col-lg-6">
+                <label for="apellidoM">Apellido Materno</label>
+                <input type="text" class="form-control" id="apellidoM" required placeholder="Delgado">
+            </div>
+            <!---->
+            </div>
+            
+            <!--Edad-->
+            <div class="form-group">
+                <label for="edad">Edad</label>
+                <input type="number" id="edad" min="15" max="100" required placeholder="15">
+            </div>
+            <!---->
+            <!--Genero-->
+            <div class="form-group">
+                <fieldset aria-required="true" id="genero">
+                    <legend>Seleccione su genero</legend>
+                    <div>
+                        <input type="radio" id="masculino" name="genero" value="masculino" >
+                        <label for="masculino">Masculino</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="femenino" name="genero" value="femenino">
+                        <label for="femenino">Femenino</label>
+                    </div>
+                </fieldset>
+            </div>
+            <!---->
+            <div class="row">
+             <!--Telefono-->
+             <div class="form-group col-lg-6">
+                <label for="telefono">Telefono</label>
+                <input type="text" id="telefono" placeholder="+569********">
+             </div>
+            <!---->
+            <!--Direccion-->
+            <div class="form-group col-lg-6">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" placeholder="Av. Calle, Ciudad, País">
+            </div>
+            <!---->
+            </div>
+            <div class="row">
+                <!-- Correo -->
+            <div class="form-group col-lg-6">
+                <label for="emailU">Correo Electronico</label>
+                <input type="email" class="form-control" id="emailU" required placeholder="email@example.com">
+            </div>
+            <!---->
+            <!-- Contraseña -->
+            <div class="form-group col-lg-6">
+                <label for="exampleDropdownFormPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleDropdownFormPassword1" required placeholder="Password">
+            </div>
+            <!---->
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <br>
+        </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <script>
+        const form = document.querySelector("form");
+            const log = document.querySelector("#log");
+
+            form.addEventListener("submit", function (event) {
+                var data = new FormData(form);
+                var output = "";
+                for (const entry of data) {
+                    output = output + entry[0] + "=" + entry[1] + "\r";
+                };
+                log.innerText = output;
+                event.preventDefault();
+            }, false);
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Scripts -->
+            <script src="/assets/js/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://kit.fontawesome.com/bf6f8f9611.js" crossorigin="anonymous"></script>
+    <script src="https://github.com/dimsemenov/Magnific-Popup.git"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+</body>
+</html>
