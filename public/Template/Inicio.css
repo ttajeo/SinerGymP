@@ -184,13 +184,14 @@
   font-weight: 400;
   letter-spacing: normal;
   width: 740px;
-  margin: 20px auto 0;
+  font-size: 1.125rem;
+  margin: 23px auto 0;
 }
 
 .u-section-2 .u-shape-1 {
   height: 197px;
   background-image: none;
-  margin: 152px auto 0 0;
+  margin: 149px auto 0 0;
 }
 
 .u-section-2 .u-layout-wrap-1 {
