@@ -1,9 +1,17 @@
+const express = require('express')
+const app = express()
+const port = 8080;
 
-require('dotenv').config();
-const Server=require('./models/server');
+app.use(express.static('public'));
 
-const server= new Server();
-
-server.listen();
-
+app.get('/inicio.html', function (req, res) {
+    
+  });
+  app.get('/*',(req, res) =>{
+    res.sendFile(__dirname +'/public/404.html' );
+  });
+  
+app.listen(port, ()=>{
+    console.log(`Escuchando el puerto http://localhost:${port}`)
+});
 

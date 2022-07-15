@@ -4,6 +4,7 @@ const {usuariosGet, usuariosDelete, usuariosPost, usuariosPut}= require('../cont
 
 const router= Router();
 
+
 router.get('/', usuariosGet);
 router.post('/:id', usuariosPost);
 router.put('/:id', usuariosPut);
