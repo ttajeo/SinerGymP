@@ -5,11 +5,11 @@ const port = process.env.PORT;
 
 app.use(express.static('public'));
 
-app.get('/inicio.html', function (req, res) {
-    
+app.get('/', function (req, res) {
+  
   });
   app.get('/*',(req, res) =>{
-    res.sendFile(__dirname +'/public/404.html' );
+    res.sendFile(__dirname +'/public/Inicio.html' );
   });
   
 app.listen(port, ()=>{
