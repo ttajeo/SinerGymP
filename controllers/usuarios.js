@@ -18,13 +18,13 @@ const usuariosGet= (req = request, res = response)=>{
 const usuariosPost= (req, res = response)=>{    
 
 
-    const {nombre, edad}= req.body;
+    const {nombre, run}= req.body;
 
 
     res.json({
         msg:'Post API - UsuariosPost',
         nombre,
-        edad
+        run
     });
 }
 const usuariosPut= (req, res = response)=>{   
