@@ -3,9 +3,9 @@ const cors = require('cors');
 class Server{
     constructor(){
         this.app= express();
-        
         this.port= process.env.PORT;
-        this.usuariosPath= '/api/user';
+        this.usuariosPath= '/api/usuarios';
+       
 
         //Middlewares
         this.middlewares();
@@ -18,25 +18,25 @@ class Server{
     middlewares(){
         //CORS
         this.app.use(cors());
-
+        this.app.post('/formulario', async(req, res)=>{
+          console.log('Entre');
+          const rut = req.body;
+          const rut2 = req.params;
+        });
         //Lectura y parseo del body
         this.app.use(express.json());
 
         //Directorio Publico
-        this.app.use(express.static('public'));
+        this.app.use(express.static('public') );
 
     }
-    
-     
     routes(){
-       
-        this.app.use(this.usuariosPath, require('../routes/user'));
-
+      this.app.use( this.usuariosPath , require('../routes/user'));  
     }
     listen(){
-        this.app.listen(this.port, ()=>{
-            console.log('Servidor corriendo en puerto', this.port);
-        });
+        this.app.listen(this.port, () =>{
+            console.log('Servidor corriendo en puerto ', this.port);
+          });
     }
 }
 

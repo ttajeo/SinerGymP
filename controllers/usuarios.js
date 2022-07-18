@@ -1,51 +1,41 @@
-const {response, request}= require('express');
-
-
-const usuariosGet= (req = request, res = response)=>{    
-
-    const {run, nombre='no name',apellidoP='no name', apellidoM='no name',apikey, page='1',limit}= req.query;
+const {response}= require('express');
+const usuariosGet= (req , res = response)=>{    //Crear o ingresar usuarios datos
     res.json({
-        msg:'get API - registrar usuarios',
-        run,
-        nombre,
-        apellidoP,
-        apellidoM,
-        apikey,
-        page,
-        limit
+        msg:'get API - Registrar usuarios',
+        
     });
 }
-const usuariosPost= (req, res = response)=>{    
-
-
-    const {nombre, run}= req.body;
-
-
+const usuariosPost= (req , res = response)=>{ 
+       const  body = req.body;
     res.json({
-        msg:'Post API - UsuariosPost',
-        nombre,
-        run
+        msg: 'POST API',
+        body
+
     });
 }
-const usuariosPut= (req, res = response)=>{   
-
-    const {id}= req.params;
+const usuariosPut= (req, res = response)=>{   //Actualizar datos de usuarios
     res.json({
         msg:'Put API - UsuariosPut',
-        id
+        
     });
 }
-const usuariosDelete= (req, res = response)=>{    
+const usuariosDelete= (req, res = response)=>{     //Eliminar usuarios y sus datos
     res.json({
         msg:'Delete API - UsuariosDelete'
     });
 }
 
+const usuariosPatch= (req, res = response) =>{
+    res.json({
+        msg: 'Patch API - UsuariosPatch '
+    });
+};
 
 
 module.exports={
     usuariosGet,
     usuariosDelete,
     usuariosPost,
-    usuariosPut
+    usuariosPut,
+    usuariosPatch
 }

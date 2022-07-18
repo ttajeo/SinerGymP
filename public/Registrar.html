@@ -68,40 +68,44 @@
                   <img src="images/pic071.png" class="u-logo-image u-logo-image-1">
                 </a>
                 <div class="u-form u-form-1">
-                  <form action="#" method="POST" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 10px"
+                  <form action="formulario" method="POST" enctype="multipart/form-data" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 10px"
                         name="form">
                       <div class="u-form-group u-form-name">
-                          <label for="name-a418" class="u-label">Ingresa tu rut</label>
-                          <input type="text" placeholder="Introduzca su rut" id="name-a418" name="rut" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-2" required="">
+                          <label for="rut" class="u-label">Ingresa tu rut</label>
+                          <input type="text" placeholder="Introduzca su rut" id="rut" name="rut" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-2" required="">
                       </div>
                       <div class="u-form-group u-form-name u-form-group-2">
-                      <label for="name-be4e" class="u-label">Ingresa tu nombre</label>
-                      <input type="text" placeholder="Ingresa tu nombre" id="name-be4e" name="name-0" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-1" required="">
+                      <label for="nombre" class="u-label">Ingresa tu nombre</label>
+                      <input type="text" placeholder="Ingresa tu nombre" id="nombre" name="nombre" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-1" required="">
                     </div>
                     <div class="u-form-group u-form-name u-form-group-3">
-                      <label for="name-27d4" class="u-label">Ingresa tu apellido paterno</label>
-                      <input type="text" placeholder="Ingresa tu apellido paterno" id="name-27d4" name="name-2" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-3" required="">
+                      <label for="apellidoP" class="u-label">Ingresa tu apellido paterno</label>
+                      <input type="text" placeholder="Ingresa tu apellido paterno" id="apellidoP" name="apellidoP" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-3" required="">
                     </div>
                     <div class="u-form-group u-form-name u-form-group-4">
-                      <label for="name-59d9" class="u-label">Ingresa tu apellido materno</label>
-                      <input type="text" placeholder="Ingresa tu apellido materno" id="name-59d9" name="name-3" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-4" required="">
+                      <label for="apellidoM" class="u-label">Ingresa tu apellido materno</label>
+                      <input type="text" placeholder="Ingresa tu apellido materno" id="apellidoM" name="apellidoM" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-4" required="">
                     </div>
                     <div class="u-form-email u-form-group">
-                      <label for="email-be4e" class="u-label">Ingresa tu correo </label>
-                      <input type="email" placeholder="Ingresa un correo electronico valido" id="email-be4e" name="email" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-5" required="">
+                      <label for="correo" class="u-label">Ingresa tu correo </label>
+                      <input type="email" placeholder="Ingresa un correo electronico valido" id="correo" name="correo" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-5" required="">
+                    </div>
+                    <div class="u-form-password u-form-group">
+                      <label for="password" class="u-label">Ingresa una contraseña</label>
+                      <input type="password" placeholder="Ingrese una contraseña de 8 digitos" id="password" name="password" maxlength="8" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-6" required="" >
                     </div>
                     <div class="u-form-group u-form-group-6">
-                      <label for="text-dd37" class="u-label u-label-6">Entrada</label>
-                      <input type="text" id="text-dd37" name="text" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-6" placeholder="Ingrese su edad" required="required">
+                      <label for="edad" class="u-label u-label-6">Edad</label>
+                      <input type="number" id="edad" name="edad" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-7" placeholder="Ingrese su edad" min="1" max="100" required="required">
                     </div>
                     <div class="u-form-address u-form-group u-form-group-7">
-                      <label for="address-8319" class="u-label">Dirección</label>
-                      <input type="text" placeholder="Ingrese su dirección" id="address-8319" name="address" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-7" required="">
+                      <label for="dirección" class="u-label">Dirección</label>
+                      <input type="text" placeholder="Ingrese su dirección" id="dirección" name="dirección" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-8" required="">
                     </div>
-                    <div class="u-form-group u-form-select u-form-group-8">
-                      <label for="select-1d27" class="u-label">Genero</label>
+                    <div class="u-form-group u-form-select u-form-groupfa-rotate">
+                      <label for="genero" class="u-label">Genero</label>
                       <div class="u-form-select-wrapper">
-                        <select id="select-1d27" name="select" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-8" required="required">
+                        <select id="genero" name="select" class="u-border-4 u-border-white u-input u-input-rectangle u-white u-input-9" required="required">
                           <option value="Femenino">Femenino</option>
                           <option value="Masculino">Masculino</option>
                           <option value="otro">otro</option>
@@ -114,9 +118,8 @@
                       </a>
                       <input type="submit" value="submit" class="u-form-control-hidden">
                     </div>
-                    <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                    <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                    <input type="hidden" value="" name="recaptchaResponse">
+                    <div class="u-form-send-message u-form-send-success"> Gracias por registrarse en nuestro gimnasio </div>
+                    <div class="u-form-send-error u-form-send-message"> Intentelo de nuevo a habido un problema. </div>
                   </form>
                 </div>
               </div>
