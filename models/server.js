@@ -1,28 +1,32 @@
 const express= require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
+const { dbConnection } = require('../database/config');
+const urlencodedParser = bodyParser.urlencoded({extended: false});
+
 class Server{
     constructor(){
         this.app= express();
         this.port= process.env.PORT;
         this.usuariosPath= '/api/usuarios';
        
-
+        //Conectar a base de datos
+        this.conectarDB();
         //Middlewares
         this.middlewares();
-
-
         //rutas de mi aplicacion
         this.routes();
         
     }
+    async conectarDB(){
+      await dbConnection();
+      
+    }
+
     middlewares(){
         //CORS
         this.app.use(cors());
-        this.app.post('/formulario', async(req, res)=>{
-          console.log('Entre');
-          const rut = req.body;
-          const rut2 = req.params;
-        });
+        
         //Lectura y parseo del body
         this.app.use(express.json());
 
@@ -39,5 +43,6 @@ class Server{
           });
     }
 }
+
 
 module.exports = Server;

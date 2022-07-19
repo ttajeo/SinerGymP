@@ -1,10 +1,6 @@
-const mongoose = require('mongoose');
-const schema_persona = new mongoose.Schema({
-    id: {
-        type: String,
-        required: true,
-        unique: true
-    },
+const {Schema, model} = require('mongoose');
+
+const PersonaSchema = Schema({
     rut:{
         type: String,
         required: true,
@@ -30,7 +26,7 @@ const schema_persona = new mongoose.Schema({
         required:true,
         unique: false
     },
-    sexo: {
+    genero: {
         type: String,
         required: true,
         unique: false
@@ -49,7 +45,12 @@ const schema_persona = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
+    },
+    rol:{
+        type: String,
+        required: true,
+        emun: ['ADMIN_ROLE', 'USER_ROLE']
     }
     
 });
-module.exports = mongoose.model('Persona', schema_persona, 'usuarios');
+module.exports = model('Personas',PersonaSchema );

@@ -1,41 +1,47 @@
-const {response}= require('express');
-const usuariosGet= (req , res = response)=>{    //Crear o ingresar usuarios datos
+const { response } = require('express');
+const Persona = require('../models/Persona');
+const bcryptjs = require('bcryptjs');
+const usuariosGet = async(req, res = response) => {
+    const usuarios = await Persona.find();
     res.json({
-        msg:'get API - Registrar usuarios',
-        
+       
+        usuarios
     });
 }
-const usuariosPost= (req , res = response)=>{ 
-       const  body = req.body;
+const usuariosPost = async (req, res = response) => {
+
+    const { rut, nombre, apellidoP, apellidoM, genero, edad, correo, password, direccion, rol } = req.body;
+    const usuario = new Persona({ rut, nombre, apellidoP, apellidoM, genero, edad, correo, password, direccion, rol });
+    //Verificar que exista el correo
+    const existeEmail = await Persona.findOne({ correo });
+    if (existeEmail) {
+        return res.status(400).json({
+            msg: 'El correo ya esta registrado'
+        });
+    }
+    //Encriptar contraseña
+    const salt = bcryptjs.genSaltSync();
+    usuario.password = bcryptjs.hashSync(password, salt);
+    //Guardar en base de datos
+    await usuario.save();
     res.json({
-        msg: 'POST API',
-        body
+        msg: 'Usuario Registrado',
+        usuario
 
     });
 }
-const usuariosPut= (req, res = response)=>{   //Actualizar datos de usuarios
-    res.json({
-        msg:'Put API - UsuariosPut',
-        
-    });
-}
-const usuariosDelete= (req, res = response)=>{     //Eliminar usuarios y sus datos
-    res.json({
-        msg:'Delete API - UsuariosDelete'
-    });
+
+const usuariosDelete = async(req, res = response) => {     //Eliminar usuarios y sus datos
+    const {id} = req.params;
+    const usuario = await Persona.findByIdAndDelete(id);
+
+    res.json(usuario);
 }
 
-const usuariosPatch= (req, res = response) =>{
-    res.json({
-        msg: 'Patch API - UsuariosPatch '
-    });
-};
 
 
-module.exports={
+module.exports = {
     usuariosGet,
     usuariosDelete,
-    usuariosPost,
-    usuariosPut,
-    usuariosPatch
+    usuariosPost
 }
