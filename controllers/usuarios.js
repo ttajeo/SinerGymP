@@ -40,6 +40,7 @@ const usuariosDelete = async(req, res = response) => {     //Eliminar usuarios y
 
 
 
+
 module.exports = {
     usuariosGet,
     usuariosDelete,
